@@ -1,15 +1,12 @@
 angular.module("mainApp", ['ngRoute'])
 
 .config(["$routeProvider", function ($routeProvider) {
-    console.log($routeProvider);
     $routeProvider.
-    when('/angular/', {
-        templateUrl: 'UI/startPage.html'     
+    when('/', {
+        templateUrl: '/angular/UI/startPage.html'
     })
-
-    .when('/angular/#/Page2', {
-        templateUrl: "/UI/Page2.html"
-       
+    .when('/Page2', {
+        templateUrl: "/angular/UI/Page2.html"
     });
 
 } ])
@@ -22,9 +19,5 @@ angular.module("mainApp", ['ngRoute'])
 } ])
 
  .controller("canvas", ['$scope', '$http', function ($scope, $http) {
-     $scope.canvas = "Canvas";
-     $http.get('data.php').success(function (data) {
-         $scope.data = data;
-     });
- } ]);
 
+ } ]);
